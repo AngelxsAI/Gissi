@@ -1,0 +1,51 @@
+*{box-sizing:border-box;}
+body{
+  margin:0; padding:0;
+  font-family:'Segoe UI', sans-serif;
+  min-height:100vh; display:flex; justify-content:center; align-items:center;
+  transition: background 0.7s ease-in-out; color:white;
+  overflow-x:hidden;
+  background:linear-gradient(120deg,#ff7eb3,#ff758c);
+}
+.container{
+  background: rgba(0,0,0,0.75); padding:30px;
+  border-radius:20px; max-width:1000px; width:95%; text-align:center;
+  box-shadow:0 10px 30px rgba(0,0,0,0.6);
+}
+input{
+  width:100%; padding:15px; border-radius:10px; border:none;
+  margin-bottom:15px; font-size:18px;
+}
+.suggestions div, .recent div{
+  padding:10px; margin:5px 0; border-radius:10px; background: rgba(255,255,255,0.2);
+  cursor:pointer; transition:0.3s;
+}
+.suggestions div:hover, .recent div:hover{background: rgba(255,255,255,0.45);}
+#result{margin-top:20px; font-size:20px; font-weight:bold; min-height:120px;}
+a{color:#FFD700; text-decoration:none;}
+img.gif{max-width:200px; margin:5px; border-radius:15px;}
+.typing {border-right: .1em solid white; white-space: nowrap; overflow: hidden; display:inline-block;}
+
+/* Animación de fondo suave */
+body.transition{transition: background 1s ease-in-out;}
+@media(max-width:700px){
+  #result{font-size:16px;} input{font-size:16px;}
+}
+
+/* Corazones flotando */
+.heart{
+  position: absolute; width:20px; height:20px;
+  background:red; transform:rotate(45deg);
+  animation: float 5s linear infinite;
+  z-index:999;
+}
+.heart:before, .heart:after{
+  content:""; position:absolute; width:20px; height:20px;
+  background:red; border-radius:50%;
+}
+.heart:before{top:-10px; left:0;}
+.heart:after{left:10px; top:0;}
+@keyframes float{
+  0%{transform:translateY(0) rotate(45deg); opacity:1;}
+  100%{transform:translateY(-800px) rotate(45deg); opacity:0;}
+}
