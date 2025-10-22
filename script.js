@@ -40,7 +40,7 @@ form.addEventListener('submit', function(event) {
       form.reset();
 
       // <-- Aquí puedes borrar o editar la alerta -->
-      alert('Mensaje totalmente anónimo y enviado correctamente');
+      alert('Mensaje totalmente anónimo y enviado correctamente a su correo');
     })
     .catch((err) => {
       btn.value = 'Enviar Mensaje';
