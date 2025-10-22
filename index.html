@@ -4,8 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tu Voz Importa | JUMI</title>
+
+  <!-- Librería EmailJS -->
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
   <script defer src="script.js"></script>
+
   <style>
     body {
       font-family: 'Poppins', sans-serif;
@@ -21,8 +24,12 @@
       padding: 2rem;
       border-radius: 1rem;
       box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-      max-width: 400px;
+      max-width: 420px;
       width: 90%;
+      transition: transform 0.2s ease-in-out;
+    }
+    form:hover {
+      transform: scale(1.02);
     }
     h2 {
       text-align: center;
@@ -37,6 +44,11 @@
       border-radius: 0.5rem;
       font-size: 1rem;
       resize: none;
+      outline: none;
+    }
+    input:focus, textarea:focus {
+      border-color: #2d89ef;
+      box-shadow: 0 0 5px rgba(45,137,239,0.4);
     }
     #button {
       background: #2d89ef;
@@ -56,6 +68,7 @@
     }
   </style>
 </head>
+
 <body>
   <form id="form">
     <h2>💬 Tu Voz Importa</h2>
@@ -68,7 +81,7 @@
 
     <input type="submit" id="button" value="Enviar Mensaje">
 
-    <p>💡 Los mensajes son confidenciales y serán atendidos por el equipo de apoyo JUMI.</p>
+    <p>💡 Los mensajes son confidenciales.</p>
   </form>
 </body>
 </html>
