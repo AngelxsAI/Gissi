@@ -1,6 +1,6 @@
 // Inicializar EmailJS
 (function() {
-  emailjs.init("U4zLAvJN3e-dKYECdzdXI"); // Tu Public Key
+  emailjs.init("EBeRPR9ySo35NWG6H"); // Tu Public Key
 })();
 
 const btn = document.getElementById('button');
