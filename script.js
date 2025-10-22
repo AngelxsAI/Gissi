@@ -1,29 +1,27 @@
-// Inicializar EmailJS con tu Public Key
+// Inicializar EmailJS
 (function() {
-  emailjs.init("U4zLAvJN3e-dKYECdzdXI");
+  emailjs.init("U4zLAvJN3e-dKYECdzdXI"); // Tu Public Key
 })();
 
-const form = document.getElementById('vozForm');
+const btn = document.getElementById('button');
+const form = document.getElementById('form');
 
-form.addEventListener('submit', function(e) {
-  e.preventDefault();
+form.addEventListener('submit', function(event) {
+  event.preventDefault(); // Evita el reload
 
-  // Recopilar datos del formulario
-  const formData = {};
-  new FormData(form).forEach((value, key) => formData[key] = value);
+  btn.value = 'Enviando...';
 
-  // Guardar respaldo local
-  let mensajes = JSON.parse(localStorage.getItem('tuVozMensajes')) || [];
-  mensajes.push(formData);
-  localStorage.setItem('tuVozMensajes', JSON.stringify(mensajes));
+  const serviceID = 'service_kmho6zu';     
+  const templateID = 'template_xr7g2kl';   
 
-  // Enviar por EmailJS
-  emailjs.send("service_kmho6zu", "EBeRPR9ySo35NWG6H", formData)
+  emailjs.sendForm(serviceID, templateID, this)
     .then(() => {
-      alert("💖 Tu mensaje fue enviado con éxito. Gracias por confiar en nosotros.");
+      btn.value = 'Enviar Mensaje';
+      alert('✅ ¡Tu mensaje fue enviado con éxito! Gracias por confiar en nosotros.');
       form.reset();
     }, (err) => {
-      alert("❌ Ocurrió un error al enviar. Intenta nuevamente.");
-      console.log(err);
+      btn.value = 'Enviar Mensaje';
+      alert('❌ Ocurrió un error al enviar.\n\n' + JSON.stringify(err));
+      console.error('EmailJS error:', err);
     });
 });
