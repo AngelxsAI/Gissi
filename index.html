@@ -73,14 +73,36 @@
   <form id="form">
     <h2>💬 Tu Voz Importa</h2>
 
-    <input type="text" name="nombre" placeholder="Tu nombre completo" required>
-    <input type="number" name="edad" placeholder="Tu edad" required>
-    <input type="email" name="email" placeholder="Tu correo electrónico" required>
-    <input type="text" name="lugar" placeholder="Lugar o municipio" required>
-    <textarea name="mensaje" rows="4" placeholder="Escribe tu mensaje o denuncia..." required></textarea>
+   <form id="cuestionario">
+  <label>Usuario:</label>
+  <input type="text" name="usuario" required>
+  
+  <label>Edad:</label>
+  <input type="number" name="edad" required>
 
-    <input type="submit" id="button" value="guardar en su correo. (100% confidencial) ">
+  <label>Correo:</label>
+  <input type="email" name="correo" required>
 
+  <label>Teléfono:</label>
+  <input type="tel" name="telefono">
+
+  <label>Municipio:</label>
+  <input type="text" name="municipio">
+
+  <label>Vive en la misma casa:</label>
+  <select name="vive_misma_casa">
+    <option value="Sí">Sí</option>
+    <option value="No">No</option>
+  </select>
+
+  <label>Tipo de mensaje:</label>
+  <input type="text" name="tipo_mensaje">
+
+  <label>Mensaje:</label>
+  <textarea name="mensaje" required></textarea>
+
+  <button type="submit">Enviar</button>
+</form>
     <p>💡 Los mensajes son confidenciales.</p>
   </form>
 </body>
