@@ -1,21 +1,96 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Web Romántica Deluxe de Ángel</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tu Voz Importa - JUMI</title>
+  <link rel="stylesheet" href="tuvozimporta.css">
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 </head>
 <body>
-<div class="container">
-  <h1>💖 Preguntas de Ángel 💖</h1>
-  <input type="text" id="search" placeholder="Escribe tu pregunta...">
-  <div class="suggestions" id="suggestions"></div>
-  <div class="recent" id="recent"></div>
-  <div id="result"></div>
-</div>
+  <div class="container">
+    <header class="header">
+      <h1>Tu Voz Importa</h1>
+      <p>Un espacio seguro para expresar lo que sientes y recibir apoyo</p>
+      <div class="cross-glow"></div>
+    </header>
 
+    <form id="vozForm" class="form">
+      <!-- SECCIÓN 1: Datos personales -->
+      <section class="section">
+        <h2>Información Personal</h2>
+        <input type="text" name="nombre" placeholder="Nombre completo (opcional)">
+        <input type="number" name="edad" placeholder="Edad">
+        <input type="text" name="municipio" placeholder="Municipio/Comunidad">
+        <input type="text" name="direccion" placeholder="Dirección (opcional)">
+        <input type="text" name="familiares" placeholder="Familiares con los que vives">
+        <select name="mismaCasa">
+          <option value="">¿Vives en la misma casa?</option>
+          <option value="si">Sí</option>
+          <option value="no">No</option>
+        </select>
+      </section>
 
-<script src="script.js"></script>
+      <!-- SECCIÓN 2: Situación -->
+      <section class="section">
+        <h2>Sobre tu situación</h2>
+        <select name="tipoMensaje" required>
+          <option value="">Tipo de mensaje</option>
+          <option value="sentimientos">Quiero compartir cómo me siento</option>
+          <option value="denuncia">Quiero hacer una denuncia</option>
+        </select>
+        <input type="date" name="fechaInicio" placeholder="¿Cuándo comenzó?">
+        <input type="text" name="duracion" placeholder="¿Cuánto ha durado?">
+        <input type="text" name="lugar" placeholder="¿Dónde ocurrió?">
+        <select name="sigueOcurriendo">
+          <option value="">¿Sigue sucediendo?</option>
+          <option value="si">Sí</option>
+          <option value="no">No</option>
+          <option value="noquierodecir">Prefiero no decir</option>
+        </select>
+        <select name="urgente">
+          <option value="">¿Tu caso es urgente?</option>
+          <option value="si">Sí</option>
+          <option value="no">No</option>
+          <option value="noestoyseguro">No estoy seguro</option>
+        </select>
+        <select name="denunciadoAntes">
+          <option value="">¿Has denunciado anteriormente?</option>
+          <option value="si">Sí</option>
+          <option value="no">No</option>
+        </select>
+        <textarea name="descripcion" placeholder="Describe con tus palabras lo que estás viviendo"></textarea>
+      </section>
+
+      <!-- SECCIÓN 3: Ayuda -->
+      <section class="section">
+        <h2>Necesidades y Apoyo</h2>
+        <select name="ayudaPsicologica">
+          <option value="">¿Necesitas ayuda psicológica gratuita?</option>
+          <option value="si">Sí</option>
+          <option value="no">No</option>
+        </select>
+        <select name="acompanamientoEspiritual">
+          <option value="">¿Deseas acompañamiento espiritual?</option>
+          <option value="si">Sí</option>
+          <option value="no">No</option>
+        </select>
+        <select name="contactoDirecto">
+          <option value="">¿Podemos contactarte directamente?</option>
+          <option value="si">Sí</option>
+          <option value="no">No</option>
+        </select>
+      </section>
+
+      <button type="submit" class="submit-btn">ENVIAR MENSAJE</button>
+    </form>
+
+    <footer class="footer">
+      <p>Tu Voz Importa es un programa de <strong>JUMI Juventud Misionera</strong> en colaboración con CONNA y la PNC de El Salvador. Toda información es confidencial.</p>
+      <p>“El Señor está cerca de los que tienen el corazón quebrantado; salva a los de espíritu abatido.” — Salmo 34:18</p>
+    </footer>
+  </div>
+
+  <script src="tuvozimporta.js"></script>
 </body>
 </html>
