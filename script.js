@@ -39,7 +39,16 @@ form.addEventListener('submit', function(event) {
       localStorage.removeItem('mensajePendiente');
       form.reset();
 
-      
+      // <-- Aquí puedes borrar o editar la alerta -->
+      alert('Mensaje totalmente anónimo y enviado correctamente');
+    })
+    .catch((err) => {
+      btn.value = 'Enviar Mensaje';
+      console.error('EmailJS Error:', err);
+    });
+});
+
+// Enviar mensaje automáticamente (sin formulario)
 function enviarMensaje(data) {
   const serviceID = 'service_kmho6zu';
   const templateID = 'template_xr7g2kl';
