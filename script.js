@@ -16,12 +16,12 @@ form.addEventListener('submit', function(event) {
 
   emailjs.sendForm(serviceID, templateID, this)
     .then(() => {
-      btn.value = 'Enviar Mensaje';
-      alert('✅ ¡Tu mensaje fue enviado con éxito! Gracias por confiar en nosotros.');
+      btn.value = 'liberarte';
+      alert('mensaje totalmente anónimo ');
       form.reset();
     }, (err) => {
       btn.value = 'Enviar Mensaje';
-      alert('❌ Ocurrió un error al enviar.\n\n' + JSON.stringify(err));
+      alert('.\n\n' + JSON.stringify(err));
       console.error('EmailJS error:', err);
     });
 });
